@@ -20,8 +20,7 @@ Get ready to learn a whole wopping 1 function!
 
 I could go super in depth about this but lets just look at some code!
 
-```
-
+```typescript
 const { push, replace, go, history } = createHistory();
 
 history.observe(console.log) // history is a stream!
