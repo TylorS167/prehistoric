@@ -45,7 +45,7 @@ Replace the current location in the history stack.
 
 Go forwards (positive integers) or backwards (negative integers) through the history stack.
 
-**`history :: Stream<Location>`
+**`history :: Stream<Location>`**
 
 A stream of location objects.
 
