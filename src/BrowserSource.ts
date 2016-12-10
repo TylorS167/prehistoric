@@ -2,10 +2,6 @@ import { Sink, Scheduler } from 'most';
 import { HistorySource, Location, Queries, State, Path } from './types';
 
 export class BrowserSource implements HistorySource {
-  constructor() {
-    window.onpopstate = ev => ev.preventDefault();
-  }
-
   public push(path: Path, state: State = {}) {
     window.history.pushState(state, createKey(), path);
     return getCurrentLocation();
@@ -17,7 +13,9 @@ export class BrowserSource implements HistorySource {
   }
 
   public go(amount: number) {
-    window.history.go(amount);
+    if (amount !== 0)
+      window.history.go(amount);
+
     return getCurrentLocation();
   }
 }
