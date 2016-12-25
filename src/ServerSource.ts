@@ -46,6 +46,10 @@ export class ServerSource implements HistorySource {
 
     return this.locations[this.position];
   }
+
+  public getCurrentLocation(): Location {
+    return this.locations[this.position];
+  }
 }
 
 function createLocation(path: Path, state: State) {

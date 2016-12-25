@@ -5,6 +5,8 @@ export interface HistorySource {
   push(path: Path, state?: State): Location;
   replace(path: Path, state?: State): Location;
   go(amount: number): Location;
+
+  getCurrentLocation(): Location;
 }
 
 export interface Location {

@@ -18,6 +18,10 @@ export class BrowserSource implements HistorySource {
 
     return getCurrentLocation();
   }
+
+  public getCurrentLocation() {
+    return getCurrentLocation();
+  }
 }
 
 function getCurrentLocation() {

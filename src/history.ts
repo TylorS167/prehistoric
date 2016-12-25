@@ -7,8 +7,18 @@ import { ServerSource } from './ServerSource';
 export function createHistory() {
   const holdSource = new HoldSubjectSource(never().source, 1);
 
+  const inBrowser = currentlyInBrowser();
+
   const historySource: HistorySource =
-    inBrowser() ? new BrowserSource() : new ServerSource();
+    inBrowser ? new BrowserSource() : new ServerSource();
+
+  if (inBrowser) {
+    window.addEventListener('popstate', function (ev: PopStateEvent) {
+      ev.preventDefault();
+
+      event(historySource.getCurrentLocation());
+    });
+  }
 
   const history: History =
     new Stream<Location>(holdSource).startWith(historySource.go(0));
@@ -26,13 +36,16 @@ export function createHistory() {
   }
 
   function go(amount: number) {
+    if (inBrowser)
+      return historySource.go(amount);
+
     event(historySource.go(amount));
   }
 
   return { push, replace, go, history };
 }
 
-function inBrowser() {
+function currentlyInBrowser() {
   try {
     return window && window.history;
   } catch (e) {
