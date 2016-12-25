@@ -1,3 +1,13 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/TylorS/prehistoric/compare/v1.1.0...v1.2.0) (2016-12-25)
+
+
+### Bug Fixes
+
+* **history:** fix for browser go() asynchrony ([24a5778](https://github.com/TylorS/prehistoric/commit/24a5778))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/TylorS/prehistoric/compare/v1.0.0...v1.1.0) (2016-12-10)
 
