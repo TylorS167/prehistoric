@@ -58,8 +58,7 @@ describe('history', function () {
   });
 
   describe('go', () => {
-    // skip this test because JSDOM does not seem to correctly implement go
-    it.skip('allows moving back through previous paths', () => {
+    it('allows moving back through previous paths', () => {
       const firstPath = '/';
 
       const { push, go, history } = createHistory();
