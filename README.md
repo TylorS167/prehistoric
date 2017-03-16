@@ -14,7 +14,7 @@ npm install --save prehistoric
 
 ## API
 
-Get ready to learn a whole wopping 1 function!
+Get ready to learn.. just 1 function!
 
 #### `createHistory()`
 
