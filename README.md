@@ -1,5 +1,7 @@
 # prehistoric
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/TylorS167/prehistoric.svg)](https://greenkeeper.io/)
+
 > Manage the history API cross-platform
 
 ## What is it?
